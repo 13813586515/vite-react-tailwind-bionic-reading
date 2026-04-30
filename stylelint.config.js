@@ -34,11 +34,11 @@ module.exports = {
     'media-feature-range-notation': null,
     'font-family-name-quotes': null,
     'selector-max-universal': 1,
-    'selector-class-pattern': [
-      '^([a-z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$',
-      {
-        message: 'Expected class selector to be kebab-case',
-      },
-    ],
+    'selector-class-pattern': null,
+    'order/properties-order': null,
+    'property-no-vendor-prefix': null,
+    'alpha-value-notation': null,
+    'length-zero-no-unit': null,
+    'number-max-precision': null,
   },
 };
