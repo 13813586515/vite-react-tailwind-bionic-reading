@@ -6,8 +6,15 @@ module.exports = {
     'stylelint-config-css-modules',
     'stylelint-config-prettier',
   ],
-  plugins: ['stylelint-scss'],
-  ignoreFiles: ['./node_modules/**/*.css', './dist/**/*.css', './coverage/**/*.css'],
+  ignoreFiles: [
+    './node_modules/**/*',
+    './dist/**/*',
+    './coverage/**/*',
+    '**/*.ts',
+    '**/*.tsx',
+    '**/*.js',
+    '**/*.jsx',
+  ],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -23,9 +30,15 @@ module.exports = {
     'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
     'string-no-newline': null,
-    // Limit the number of universal selectors in a selector,
-    // to avoid very slow selectors
+    'declaration-empty-line-before': null,
+    'media-feature-range-notation': null,
+    'font-family-name-quotes': null,
     'selector-max-universal': 1,
-    'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$',
+    'selector-class-pattern': [
+      '^([a-z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$',
+      {
+        message: 'Expected class selector to be kebab-case',
+      },
+    ],
   },
 };
